@@ -1,5 +1,6 @@
 import 'package:email_password_practice/routes/navigation.dart';
 import 'package:email_password_practice/tabs/task_assigned.dart';
+import 'package:email_password_practice/tabs/task_completed.dart';
 import 'package:email_password_practice/values/custom_snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -87,9 +88,7 @@ class _HomeState extends State<Home> {
         body: TabBarView(
           children: [
             const TaskAssigned(),
-            Container(
-              color: Colors.yellow,
-            ),
+            const TaskCompleted(),
             Container(
               color: Colors.blue,
             ),

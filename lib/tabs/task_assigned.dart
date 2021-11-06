@@ -57,13 +57,12 @@ class _TaskAssignedState extends State<TaskAssigned> {
                               : () {
                                   collectionReference
                                       .doc(documentSnapshot.id)
-                                      .update({
-                                    'task_percentage':
-                                        data['task_percentage'] + 10,
-                                  });
-                                  if (data['task_percentage'] == 100) {
-                                    MyLists.completedTasks!.add(data['title']);
-                                  }
+                                      .update(
+                                    {
+                                      'task_percentage':
+                                          data['task_percentage'] + 10,
+                                    },
+                                  );
                                 },
                           child: const Text('add')),
                     ],

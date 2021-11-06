@@ -1,3 +1,3 @@
 class MyLists {
-  static List<String>? completedTasks;
+  static List<String> completedTasks = [];
 }
