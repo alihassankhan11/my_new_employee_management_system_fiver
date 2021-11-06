@@ -39,6 +39,7 @@ dependencies:
   google_fonts: 
   firebase_dynamic_links: ^2.0.11
   flutter_lints: 
+  cloud_firestore: 
 dev_dependencies:
   flutter_test:
     sdk: flutter

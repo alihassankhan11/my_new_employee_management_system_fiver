@@ -29,10 +29,11 @@ class MyTextField extends StatelessWidget {
             onChanged: onChanged,
             cursorColor: Colors.white,
             cursorHeight: 30,
-            decoration: const InputDecoration(
-              focusedBorder: OutlineInputBorder(
+            decoration: InputDecoration(
+              hintText: 'Enter ${text.toLowerCase()}',
+              focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey)),
-              enabledBorder: OutlineInputBorder(
+              enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white)),
             ),
           ),

@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: const Text(StringConst.SIGN_UP),
       ),
@@ -79,22 +79,26 @@ class _SignUpState extends State<SignUp> {
           ),
           MySpacer(size: size),
           //email
+          MyTextField(text: 'Name', size: size, onChanged: (_) {}),
+          MySpacer(size: size),
+          //password
           MyTextField(
-              text: StringConst.EMAIL,
+              text: 'Email',
               size: size,
               onChanged: (value) {
                 email = value;
               }),
           MySpacer(size: size),
-          //password
+          MyTextField(text: 'Phone', size: size, onChanged: (_) {}),
+          MySpacer(size: size),
+          MyTextField(text: 'Designation', size: size, onChanged: (_) {}),
+          MySpacer(size: size),
           MyTextField(
-              text: StringConst.PASSWORD,
+              text: 'Password',
               size: size,
               onChanged: (value) {
                 password = value;
               }),
-          MySpacer(size: size),
-          MyTextField(text: 'Name', size: size, onChanged: (value) {}),
           MySpacer(size: size),
           //sign up
           CustomButton(
@@ -105,6 +109,7 @@ class _SignUpState extends State<SignUp> {
           ),
           MySpacer(size: size),
           lastLine(),
+          const SpaceH180()
         ]),
       ),
     );
