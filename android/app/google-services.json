@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "900795216850",
+    "project_id": "employee-9b1de",
+    "storage_bucket": "employee-9b1de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900795216850:android:f04c861b3d5a1d260ace0b",
+        "android_client_info": {
+          "package_name": "com.example.my_new_employee_management_system_fiver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900795216850-g8ovs9ngr2t4bn10vaimvomgo9viee7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI0NasQiEjADFI7Cs70VCLyE6i-02oQuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900795216850-g8ovs9ngr2t4bn10vaimvomgo9viee7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
