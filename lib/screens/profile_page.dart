@@ -10,7 +10,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  late var size;
+  late Size size;
 
   @override
   void didChangeDependencies() {
