@@ -36,10 +36,11 @@ class _MyAppState extends State<MyApp> {
       builder: (context, snapshot) {
         return MaterialApp(
           theme: ThemeData(
-              primarySwatch: Colors.blueGrey,
-              appBarTheme: AppBarTheme(
-                color: Colors.blueGrey.shade600,
-              )),
+            primarySwatch: Colors.blueGrey,
+            appBarTheme: AppBarTheme(
+              color: Colors.blueGrey.shade600,
+            ),
+          ),
           home: SplashScreen(
             snapshot: snapshot,
           ),

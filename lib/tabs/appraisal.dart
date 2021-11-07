@@ -11,44 +11,44 @@ class Aporaisal extends StatefulWidget {
 
 class _AporaisalState extends State<Aporaisal> {
   late FirebaseFirestore firebaseFirestore;
-  late int counter;
+  int counter = 0;
+  Stream<QuerySnapshot> taskAssigned =
+      FirebaseFirestore.instance.collection('task assigned').snapshots();
+  late Map<String, dynamic> data;
   @override
-  void initState() {
+  void didChangeDependencies() {
     firebaseFirestore = FirebaseFirestore.instance;
-    counter = 0;
-    super.initState();
+
+    super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference collectionReference =
-        FirebaseFirestore.instance.collection('task assigned');
-
-    Stream<QuerySnapshot> taskAssigned =
-        FirebaseFirestore.instance.collection('task assigned').snapshots();
     return StreamBuilder<QuerySnapshot>(
       stream: taskAssigned,
       builder: (context, snapshot) {
-        bool? safdf = snapshot.data?.docs.every((element) {
-          Map<String, dynamic> data = element.data() as Map<String, dynamic>;
-
-          if (data['task_percentage'] == 100) {
-            print('000000000000000000000000000000000000000000000000000');
-            counter = counter + 1;
-            return true;
-          } else {
-            print('111111111111111111111111111111111111111111111111111111111');
-            counter = counter;
-            return false;
-          }
-        });
-
+        print('000000000000000000000000000000000000000000000000000000');
         if (snapshot.hasError) {
           return const Text('something has wrong');
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Text('Loadding');
         }
+
+        snapshot.data?.docs.every(
+          (element) {
+            data = element.data() as Map<String, dynamic>;
+            print('..................................................');
+            if (data['task_percentage'] == 100) {
+              counter = counter + 1;
+
+              return true;
+            } else {
+              counter = counter;
+              return false;
+            }
+          },
+        );
 
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,10 +60,9 @@ class _AporaisalState extends State<Aporaisal> {
               percent: counter / 100,
               center: new Text(
                 counter.toString(),
-                style:
-                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
               ),
-              footer: new Text(
+              footer: Text(
                 "",
                 style:
                     new TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),

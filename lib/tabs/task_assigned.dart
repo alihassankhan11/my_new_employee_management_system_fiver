@@ -56,7 +56,7 @@ class _TaskAssignedState extends State<TaskAssigned> {
                     title: Text(data['title'].toString()),
                     subtitle: Text(data['description'].toString()),
                     trailing: SizedBox(
-                      width: 100,
+                      width: 120,
                       child: Row(
                         children: [
                           Text(data['task_percentage'].toString()),
@@ -76,7 +76,7 @@ class _TaskAssignedState extends State<TaskAssigned> {
                                       },
                                     );
                                   },
-                            child: const Text('add'),
+                            child: const Text('update'),
                           ),
                         ],
                       ),

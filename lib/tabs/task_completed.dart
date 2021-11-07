@@ -47,15 +47,16 @@ class _TaskCompletedState extends State<TaskCompleted> {
                       tileColor: Colors.blueGrey.shade200,
                       shape: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           style: BorderStyle.solid,
                           color: Colors.white,
                         ),
                       ),
                       title: Text(data['title'].toString()),
                       subtitle: Text(data['description'].toString()),
+                      trailing: const Text('Completed'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                   ],
