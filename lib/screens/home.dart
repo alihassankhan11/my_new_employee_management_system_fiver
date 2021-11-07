@@ -1,4 +1,5 @@
 import 'package:email_password_practice/routes/navigation.dart';
+import 'package:email_password_practice/tabs/appraisal.dart';
 import 'package:email_password_practice/tabs/task_assigned.dart';
 import 'package:email_password_practice/tabs/task_completed.dart';
 import 'package:email_password_practice/values/custom_snack_bar.dart';
@@ -89,9 +90,7 @@ class _HomeState extends State<Home> {
           children: [
             const TaskAssigned(),
             const TaskCompleted(),
-            Container(
-              color: Colors.blue,
-            ),
+            const Aporaisal(),
           ],
         ),
       ),

@@ -15,13 +15,13 @@ class MyTextField extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '$text:',
-              style: const TextStyle(fontSize: 20, color: Colors.white),
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Text(
+          //     '$text:',
+          //     style: const TextStyle(fontSize: 20, color: Colors.white),
+          //   ),
+          // ),
           SizedBox(
             height: size.height * 0.01,
           ),

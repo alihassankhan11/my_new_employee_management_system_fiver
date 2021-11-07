@@ -21,6 +21,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   late Size size;
+  late Size size2;
   var email = '';
   var password = '';
   var firebaseAuth = FirebaseAuth.instance;
@@ -50,6 +51,7 @@ class _SignUpState extends State<SignUp> {
   void didChangeDependencies() {
     size = Size(MediaQuery.of(context).size.width,
         MediaQuery.of(context).size.height - 86);
+    size2 = Size(MediaQuery.of(context).size.width, 30);
     super.didChangeDependencies();
   }
 
@@ -63,9 +65,10 @@ class _SignUpState extends State<SignUp> {
       body: Container(
         padding: const EdgeInsets.all(20),
         decoration: Decorations.boxDecorationForEntireScreen(),
-        child: ListView(children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const Text(
             StringConst.SIGN_UP,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 35,
               color: Colors.white,
@@ -73,14 +76,10 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           MySpacer(size: size),
-          const Text(
-            StringConst.CREATE_AN_ACCOUNT,
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          MySpacer(size: size),
+
           //email
           MyTextField(text: 'Name', size: size, onChanged: (_) {}),
-          MySpacer(size: size),
+
           //password
           MyTextField(
               text: 'Email',
@@ -88,11 +87,11 @@ class _SignUpState extends State<SignUp> {
               onChanged: (value) {
                 email = value;
               }),
-          MySpacer(size: size),
+
           MyTextField(text: 'Phone', size: size, onChanged: (_) {}),
-          MySpacer(size: size),
+
           MyTextField(text: 'Designation', size: size, onChanged: (_) {}),
-          MySpacer(size: size),
+          MySpacer(size: size2),
           MyTextField(
               text: 'Password',
               size: size,
@@ -107,9 +106,8 @@ class _SignUpState extends State<SignUp> {
             size: size,
             onPressed: signUpWithEmailPassword,
           ),
-          MySpacer(size: size),
-          lastLine(),
-          const SpaceH180()
+          MySpacer(size: size2),
+          Container(alignment: Alignment.centerLeft, child: lastLine()),
         ]),
       ),
     );

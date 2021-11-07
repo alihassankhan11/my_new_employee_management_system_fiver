@@ -84,13 +84,8 @@ class _SignInState extends State<SignIn> {
               MySpacer(
                 size: size,
               ),
-              const Text(
-                StringConst.WELCOME_CREDIENTIAL,
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              MySpacer(
-                size: size,
-              ),
+             
+             
               //email
               MyTextField(
                 text: StringConst.EMAIL,

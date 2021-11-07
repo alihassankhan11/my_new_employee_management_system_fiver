@@ -1,6 +1,5 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:email_password_practice/values/lists.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -27,18 +26,18 @@ class _TaskAssignedState extends State<TaskAssigned> {
     Stream<QuerySnapshot> taskAssigned =
         FirebaseFirestore.instance.collection('task assigned').snapshots();
     return StreamBuilder<QuerySnapshot>(
-        stream: taskAssigned,
-        builder: (context, snapshot) {
-          var listWidget = <Widget>[];
-          if (snapshot.hasError) {
-            return const Text('something has wrong');
-          }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Text('Loadding');
-          }
-          return ListView(
-            children: snapshot.data!.docs
-                .map<Widget>((DocumentSnapshot documentSnapshot) {
+      stream: taskAssigned,
+      builder: (context, snapshot) {
+        var listWidget = <Widget>[];
+        if (snapshot.hasError) {
+          return const Text('something has wrong');
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Text('Loadding');
+        }
+        return ListView(
+          children: snapshot.data!.docs.map<Widget>(
+            (DocumentSnapshot documentSnapshot) {
               // feild data of the documnet
               Map<String, dynamic> data =
                   documentSnapshot.data() as Map<String, dynamic>;
@@ -69,8 +68,10 @@ class _TaskAssignedState extends State<TaskAssigned> {
                   ),
                 ),
               );
-            }).toList(),
-          );
-        });
+            },
+          ).toList(),
+        );
+      },
+    );
   }
 }
