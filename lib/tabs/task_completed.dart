@@ -41,9 +41,24 @@ class _TaskCompletedState extends State<TaskCompleted> {
                   documentSnapshot.data() as Map<String, dynamic>;
               // builder list of widget
               if (data['task_percentage'] == 100) {
-                return ListTile(
-                  title: Text(data['title'].toString()),
-                  subtitle: Text(data['description'].toString()),
+                return Column(
+                  children: [
+                    ListTile(
+                      tileColor: Colors.blueGrey.shade200,
+                      shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(
+                          style: BorderStyle.solid,
+                          color: Colors.white,
+                        ),
+                      ),
+                      title: Text(data['title'].toString()),
+                      subtitle: Text(data['description'].toString()),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                  ],
                 );
               } else {
                 return const SizedBox();

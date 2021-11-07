@@ -50,21 +50,36 @@ class _AporaisalState extends State<Aporaisal> {
           return const Text('Loadding');
         }
 
-        return CircularPercentIndicator(
-          radius: 120.0,
-          lineWidth: 13.0,
-          animation: true,
-          percent: counter / 100,
-          center: new Text(
-            counter.toString(),
-            style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-          ),
-          footer: new Text(
-            "Sales this week",
-            style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
-          ),
-          circularStrokeCap: CircularStrokeCap.round,
-          progressColor: Colors.purple,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularPercentIndicator(
+              radius: 200.0,
+              lineWidth: 13.0,
+              animation: true,
+              percent: counter / 100,
+              center: new Text(
+                counter.toString(),
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              footer: new Text(
+                "",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
+              ),
+              circularStrokeCap: CircularStrokeCap.round,
+              progressColor: Colors.blueGrey.shade600,
+            ),
+            Text(
+              'You are ${100 - counter} tasks away for promotion',
+              style: TextStyle(
+                fontSize: 22,
+                color: Colors.blueGrey.shade800,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         );
       },
     );

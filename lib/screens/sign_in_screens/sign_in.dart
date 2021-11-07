@@ -84,8 +84,7 @@ class _SignInState extends State<SignIn> {
               MySpacer(
                 size: size,
               ),
-             
-             
+
               //email
               MyTextField(
                 text: StringConst.EMAIL,
@@ -156,7 +155,7 @@ class _SignInState extends State<SignIn> {
           TextSpan(text: StringConst.DO_YOU_HAVE_ALREADY_ACCOUNT),
           TextSpan(
               text: "  ${StringConst.SIGN_UP}",
-              style: TextStyle(color: Colors.blue, fontSize: 20))
+              style: TextStyle(color: Colors.black87, fontSize: 20))
         ])),
       ),
     );

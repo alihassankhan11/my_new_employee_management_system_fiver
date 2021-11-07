@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -34,6 +35,11 @@ class _MyAppState extends State<MyApp> {
       future: _initialization,
       builder: (context, snapshot) {
         return MaterialApp(
+          theme: ThemeData(
+              primarySwatch: Colors.blueGrey,
+              appBarTheme: AppBarTheme(
+                color: Colors.blueGrey.shade600,
+              )),
           home: SplashScreen(
             snapshot: snapshot,
           ),

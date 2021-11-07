@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/home.dart';
-import 'screens/loading.dart';
 import 'screens/something_wrong.dart';
 
 class PageChoice extends StatelessWidget {
@@ -28,6 +27,6 @@ class PageChoice extends StatelessWidget {
       return page;
     }
     // Otherwise, show something whilst waiting for initialization to complete
-    return const Loading();
+    return const Text('loadding');
   }
 }

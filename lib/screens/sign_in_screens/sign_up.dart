@@ -51,7 +51,7 @@ class _SignUpState extends State<SignUp> {
   void didChangeDependencies() {
     size = Size(MediaQuery.of(context).size.width,
         MediaQuery.of(context).size.height - 86);
-    size2 = Size(MediaQuery.of(context).size.width, 30);
+    size2 = Size(MediaQuery.of(context).size.width, 100);
     super.didChangeDependencies();
   }
 
@@ -79,19 +79,32 @@ class _SignUpState extends State<SignUp> {
 
           //email
           MyTextField(text: 'Name', size: size, onChanged: (_) {}),
+          MySpacer(
+            size: size,
+            heightFactor: 0.01,
+          ),
+          //phone
 
-          //password
           MyTextField(
               text: 'Email',
               size: size,
               onChanged: (value) {
                 email = value;
               }),
-
+          MySpacer(
+            size: size,
+            heightFactor: 0.01,
+          ),
           MyTextField(text: 'Phone', size: size, onChanged: (_) {}),
-
+          MySpacer(
+            size: size,
+            heightFactor: 0.01,
+          ),
           MyTextField(text: 'Designation', size: size, onChanged: (_) {}),
-          MySpacer(size: size2),
+          MySpacer(
+            size: size,
+            heightFactor: 0.01,
+          ),
           MyTextField(
               text: 'Password',
               size: size,
@@ -106,7 +119,10 @@ class _SignUpState extends State<SignUp> {
             size: size,
             onPressed: signUpWithEmailPassword,
           ),
-          MySpacer(size: size2),
+          MySpacer(
+            size: size,
+            heightFactor: 0.01,
+          ),
           Container(alignment: Alignment.centerLeft, child: lastLine()),
         ]),
       ),
@@ -122,12 +138,16 @@ class _SignUpState extends State<SignUp> {
         NavigationTo.push(const SignIn(), context);
       },
       child: RichText(
-          text: const TextSpan(children: [
-        TextSpan(text: StringConst.ALREADY_HAVE_ACCOUNT),
-        TextSpan(
-            text: ' ${StringConst.SIGN_IN}',
-            style: TextStyle(color: Colors.blue, fontSize: 20))
-      ])),
+        text: const TextSpan(
+          children: [
+            TextSpan(text: StringConst.ALREADY_HAVE_ACCOUNT),
+            TextSpan(
+              text: ' ${StringConst.SIGN_IN}',
+              style: TextStyle(color: Colors.black87, fontSize: 20),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

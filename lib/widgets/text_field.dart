@@ -30,7 +30,8 @@ class MyTextField extends StatelessWidget {
             cursorColor: Colors.white,
             cursorHeight: 30,
             decoration: InputDecoration(
-              hintText: 'Enter ${text.toLowerCase()}',
+              labelText: 'Enter ${text.toLowerCase()}',
+              labelStyle: TextStyle(color: Colors.white),
               focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey)),
               enabledBorder: const OutlineInputBorder(

@@ -1,4 +1,5 @@
 import 'package:email_password_practice/routes/navigation.dart';
+import 'package:email_password_practice/screens/profile_page.dart';
 import 'package:email_password_practice/tabs/appraisal.dart';
 import 'package:email_password_practice/tabs/task_assigned.dart';
 import 'package:email_password_practice/tabs/task_completed.dart';
@@ -24,6 +25,45 @@ class _HomeState extends State<Home> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: const BoxDecoration(
+                  color: Colors.blueGrey,
+                ),
+                child: Center(
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/avatar.png'),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                title: const Text('Profile'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (buildContext) {
+                        return ProfilePage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: const Text('Home'),
           bottom: const TabBar(
@@ -86,11 +126,11 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            const TaskAssigned(),
-            const TaskCompleted(),
-            const Aporaisal(),
+            TaskAssigned(),
+            TaskCompleted(),
+            Aporaisal(),
           ],
         ),
       ),

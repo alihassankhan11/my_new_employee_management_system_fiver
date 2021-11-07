@@ -42,31 +42,50 @@ class _TaskAssignedState extends State<TaskAssigned> {
               Map<String, dynamic> data =
                   documentSnapshot.data() as Map<String, dynamic>;
               // builder list of widget
-              return ListTile(
-                title: Text(data['title'].toString()),
-                subtitle: Text(data['description'].toString()),
-                trailing: SizedBox(
-                  width: 100,
-                  child: Row(
-                    children: [
-                      Text(data['task_percentage'].toString()),
-                      ElevatedButton(
-                          onPressed: data['task_percentage'] == 100
-                              ? null
-                              : () {
-                                  collectionReference
-                                      .doc(documentSnapshot.id)
-                                      .update(
-                                    {
-                                      'task_percentage':
-                                          data['task_percentage'] + 10,
-                                    },
-                                  );
-                                },
-                          child: const Text('add')),
-                    ],
+              return Column(
+                children: [
+                  ListTile(
+                    tileColor: Colors.blueGrey.shade200,
+                    shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        style: BorderStyle.solid,
+                        color: Colors.white,
+                      ),
+                    ),
+                    title: Text(data['title'].toString()),
+                    subtitle: Text(data['description'].toString()),
+                    trailing: SizedBox(
+                      width: 100,
+                      child: Row(
+                        children: [
+                          Text(data['task_percentage'].toString()),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          ElevatedButton(
+                            onPressed: data['task_percentage'] == 100
+                                ? null
+                                : () {
+                                    collectionReference
+                                        .doc(documentSnapshot.id)
+                                        .update(
+                                      {
+                                        'task_percentage':
+                                            data['task_percentage'] + 10,
+                                      },
+                                    );
+                                  },
+                            child: const Text('add'),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                ],
               );
             },
           ).toList(),
